@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+  Registered Trainers
+{% endblock %}
+{% block content %}
+        <div class="row" style="margin-top:20px; margin-left:20px">
+        <div class="col-8">
+        <h2>Registered Trainers</h2>
+
+        <br>
+       <table class="table table-bordered">
+          <thead class="thead-dark">
+             <tr>
+                <!-- Your Columns HERE -->
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+             </tr>
+          </thead>
+          <tbody>
+        {% for members in members %}
+
+        <tr>
+            <td>{{ member.id }}</td>
+            <td>{{ member.name }}</td>
+            <td>{{ member.gender }}</td>
+            <td>{{ member.phonenumber }}</td>
+            <td>
+                <a href="/update/{{patient.id}}" type="button" class="btn btn-outline btn-info">Update</button> </a>
+                <!-- <button type = "submit" class="btn btn-outline btn-info" href="/HospitalManagement/template/update.html" value="{{patient.id}}">Update</button> -->
+            </td>
+            <td> <a href="/delete/{{patient.id}}" type="button" class="btn btn-outline btn-info">Delete</button> </a></td>
+         </tr>
+            {% endfor %}
+{% endblock %}
+

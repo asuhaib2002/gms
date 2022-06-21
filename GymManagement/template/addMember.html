@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %}
+Add Member
+{% endblock %}
+{% block content %}
+
+<body>
+    <div class="maindiv"
+        style="display:flex; flex-direction:column; justify-content: center; padding-right: 30px; padding-left: 30px;">
+        <div style="display: block;" class="headDiv mt-3">
+            <h2 class="heading">
+                Add Your Patient
+            </h2>
+        </div>
+        <div class="formdiv">
+            {% from '_formhelpers.html' import render_field %}
+
+            <form method="POST" class="" style="color:black" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+
+
+                <br>
+                <div class="">
+                    <div class=" row">
+                        <div class="col-md-3">
+                            {{ render_field(form.name, class="",placeholder="Name", style="width:100%; padding: 2px
+                            5px;")}}
+                        </div>
+                        <div class="col-md-3">
+                            {{ render_field(form.email_address,class="",placeholder="Email_Address", style="width:100%;
+                            padding: 2px 5px; ")}}
+                        </div>
+
+                    </div>
+            
+                        <div class="col-md-2">
+                            {{
+
+                            render_field(form.phonenumber,placeholder="PhoneNumber", style="width:100%; padding: 2px
+                            5px;")
+                            }}
+                        </div>
+                        
+                    <div class="form-group">
+                        {{ render_field(form.gender,placeholder="Gender", style="width:50%; padding: 2px 5px;")}}
+                    </div>
+                    <div class="form-group">
+                        {{ render_field(form.dob,placeholder="Date of
+                        birth", style="width:50%; padding: 2px 5px;")}}
+                    </div>
+                    
+                        <div class="col-md-2">
+                            {{ render_field(form.regdate,placeholder="Registration
+                            Date",class="form-control", style="width:100%; padding: 2px 5px;")}}
+                        </div>
+
+                        <div class="col-md-2">
+                            {{ render_field(form.membershipdate,placeholder="Registration
+                            Date",class="form-control", style="width:100%; padding: 2px 5px;")}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ render_field(form.address,placeholder="Address", style="width:100%; padding: 2px 5px;")}}
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="container">
+                            <div class="row">
+                                <div>{{ render_field(form.image_1, style="width:100%; padding: 2px 5px;")}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ form.submit(class="btn btn-lg btn-block btn-primary", style="width:100%; padding: 2px 5px;") }}
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+{% endblock %}
