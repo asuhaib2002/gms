@@ -21,7 +21,7 @@
              </tr>
           </thead>
           <tbody>
-        {% for members in members %}
+        {% for member in members %}
 
         <tr>
             <td>{{ member.id }}</td>
@@ -29,10 +29,10 @@
             <td>{{ member.gender }}</td>
             <td>{{ member.phonenumber }}</td>
             <td>
-                <a href="/update/{{patient.id}}" type="button" class="btn btn-outline btn-info">Update</button> </a>
-                <!-- <button type = "submit" class="btn btn-outline btn-info" href="/HospitalManagement/template/update.html" value="{{patient.id}}">Update</button> -->
+                <a href="/update/{{member.id}}" type="button" class="btn btn-outline btn-info">Update</button> </a>
+                <!-- <button type = "submit" class="btn btn-outline btn-info" href="/HospitalManagement/template/update.html" value="{{member.id}}">Update</button> -->
             </td>
-            <td> <a href="/delete/{{patient.id}}" type="button" class="btn btn-outline btn-info">Delete</button> </a></td>
+            <td> <a href="/delete/{{member.id}}" type="button" class="btn btn-outline btn-info">Delete</button> </a></td>
          </tr>
             {% endfor %}
 {% endblock %}
